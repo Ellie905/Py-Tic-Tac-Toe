@@ -142,7 +142,7 @@ import pynput
 
 #--------------------------GUI--------------------------#
 
-class screen:
+class Screen:
     def __init__(self, rawData):
         self.data = rawData
 
@@ -150,7 +150,7 @@ class screen:
     def update(self):
         # Render self.data using Rich
 
-class gameScreen(screen):
+class GameScreen(Screen):
     # Methods
     def update(self):
         # Render self.data using Rich (Game Output)
@@ -158,7 +158,7 @@ class gameScreen(screen):
 
 #--------------------------GAME DATA--------------------------#
 
-class gamestate:
+class Gamestate:
     def __init__(self):
         self.caret = 0
         self.table = [['' for x in range(3)] for y in range(3)]
@@ -279,7 +279,7 @@ while True:
 
     playerSymbol = playerPickSymbol()
 
-    game = gamestate()
+    game = Gamestate()
     # Game Loop
 
     showResults(game)
